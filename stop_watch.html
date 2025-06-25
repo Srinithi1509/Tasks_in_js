@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stopwatch</title>
+</head>
+<body>
+  <h2>Stopwatch: <span id="display">0</span> sec</h2>
+  <button onclick="start()">Start</button>
+  <button onclick="pause()">Pause</button>
+  <button onclick="reset()">Reset</button>
+
+  <script>
+    let time = 0;
+    let timer;
+    let display = document.getElementById("display");
+
+    function start() {
+      if (!timer) {
+        timer = setInterval(() => {
+          time++;
+          display.textContent = time;
+        }, 1000);
+      }
+    }
+    
+
+    function pause() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function reset() {
+      clearInterval(timer);
+      timer = null;
+      time = 0;
+      display.textContent = time;
+    }
+  </script>
+</body>
+</html>

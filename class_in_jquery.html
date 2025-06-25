@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery classes</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<style>
+    #box{
+        width:300px;
+        height: 150px;
+        border: 2px solid #555;
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+    }
+    .highlight{
+        background-color: yellow;
+        color: red;
+        font-weight: bold;
+        border: 3px dashed orange;
+    }
+    #hoverbox{
+        width: 300px;
+        height:150px;
+        border:2px solid #555;
+        margin-inline-end: 20px;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+    }
+    #anidiv{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(104, 4, 4);
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        margin: 20px auto;
+        
+    }
+</style>
+<body>
+    <h1>jquery classes example</h1>
+    <div id="box">
+       this is a box
+    </div>
+    <!-- hover event -->
+    <div id="hoverbox">hover over me</div>
+
+    <!-- for focus example -->
+     <input id="namefield" name="your name" placeholder="enter your name"required>
+     <label for="inputfield">enter your name</label>
+     <p id="focusresult"></p>
+
+    <!-- class add,remove,toggle example -->
+    <button type="button" id="addbtn">add class</button>
+    <button type="button" id="removebtn">remove class</button>
+    <button type="button" id="togglebtn">toggle class</button>
+    <!-- animation in jquery -->
+     <div id="anidiv">
+        box of animation
+        <button id="animebtn">animate box</button>
+
+     </div>
+     <!-- <button id="animebtn">animate box</button> -->
+
+<script>
+    $(document).ready(function()
+    {
+    $("#addbtn").click(function(){
+        $("#box").addClass("highlight")
+    })
+    $("#removebtn").click(function(){
+     $("#box").removeClass("highlight")
+})
+    $("#togglebtn").click(function(){
+$("#box").toggleClass("highlight")
+})
+// function for hover event
+$("#hoverbox").hover(function()
+{
+    $(this).css("background-color","lightgreen");
+},
+function(){
+    $(this).css("background-color","lightblue")
+})
+$("#namefield").focus(function(){
+    $("#focusresult").text("input field is focused")
+})
+$("#namefield").blur(function(){
+    $("#focusresult").text("input field lost its focus")
+});
+// animation using jquery
+$("#animebtn").click(function(){
+$("#anidiv").animate({
+    left: '250px',
+    width: '200px',
+    height: '200px',
+    opacity: 0.5,
+},2000,function(){
+    $("#anidiv").animate({
+        left: '0px',
+        width:'100px',
+        height:'100px',
+        opacity:1
+    },2000,function(){
+        alert("🎉animation completed")
+
+    })   
+})
+
+})
+})
+
+</script>   
+</body>
+</html>

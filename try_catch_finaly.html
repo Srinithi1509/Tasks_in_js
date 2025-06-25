@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try{
+            let age=prompt("enter your age")
+            if(isNaN(age)){
+                throw new Error("this is not a number");
+            }
+            else{
+                document.write("you enterd a valid number"+"<br>")
+            }
+                
+            }
+        catch(error){
+            document.write(error.message+"<br>")
+        }
+        finally{
+            document.write("this will run for sure")
+        }
+    </script>
+</body>
+</html>

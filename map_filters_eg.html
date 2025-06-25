@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // map ,filters
+        let arr=[2,3,4,5,6]
+        let mappedarr=arr.filter(num=>(num%2==0))
+        .map(num=>num*2)
+        console.log(mappedarr)
+        // normal function
+        function fun(){
+            if(arr%2===0){
+                console.log(arr)
+            }
+            
+        }
+        let names = ["Ana", "John", "Srinithi", "Arun", "Joe"];
+        let four=names.filter(name=>(name.length>4))
+        console.log(four)
+    
+        // reduce
+        let reduce=arr.reduce(function(acc,val){
+            return acc+val;
+        },0);
+        console.log(reduce)
+       let obj = {
+  name: "srinithi",
+  education: {
+    course: "b-tech",
+    dept: "information technology",
+    college: "dscet"
+  },
+  percentage: function () {
+    let percent = parseFloat(prompt("Enter your 10th percentage:"));
+
+    if (percent >= 80) {
+      console.log("You are brilliant");
+    } else if (percent >= 50) {
+      console.log("You are average");
+    } else {
+      //  Arrow function (inherits `this` from parent function)
+      const childFunction = () => {
+        if (percent < 30) {
+          console.log(`${this.name}, Below average`);
+        }
+      };
+      childFunction();
+    }
+  }
+};
+
+obj.percentage(); // Calling  the function
+
+
+
+
+
+    </script>
+</body>
+</html>

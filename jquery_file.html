@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>jQuery Practice</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <form>
+    <p id="para">hello guys!</p>
+    <input id="input" type="text" />
+
+    <div id="myDiv">Original content</div>
+    <br>
+
+    <!-- Buttons for HTML manipulation -->
+    <button type="button" id="changeHtml">Set HTML</button>
+    <button type="button" id="appendHtml">Append</button>
+    <button type="button" id="prependHtml">Prepend</button>
+    <button type="button" id="showText">Get Text</button>
+
+    <br><br>
+
+    <!-- Buttons for value manipulation -->
+    <button type="button" id="setbtn">Set Value</button>
+    <button type="button" id="getbtn">Get Value</button>
+
+    <!-- Show/Hide Buttons -->
+    <button type="button" id="hidebtn">Hide Content</button>
+    <button type="button" id="showbtn">Show Content</button>
+
+    <!-- Output Areas -->
+    <p id="result"></p>
+    <p id="output"></p>
+  </form>
+
+  <script>
+    $(document).ready(function () {
+
+      // Show / Hide Content
+      $("#hidebtn").click(function () {
+        $("#para").hide();
+      });
+
+      $("#showbtn").click(function () {
+        $("#para").show();
+      });
+
+      // Set / Get input value
+      $("#setbtn").click(function () {
+        $("#input").val("srinithi");
+      });
+
+      $("#getbtn").click(function () {
+        const newval = $("#input").val();
+        $("#result").text("You entered: " + newval);
+      });
+
+      // HTML Manipulation
+      $('#changeHtml').click(function () {
+        $('#myDiv').html('<strong>New bold content</strong>');
+     
+
+      $('#appendHtml').click(function () {
+        $('#myDiv').append('<span>Appended content</span>');
+      });
+    });
+
+      $('#prependHtml').click(function () {
+        $('#myDiv').prepend('<span>Prepended content</span>');
+      });
+
+      $('#showText').click(function () {
+        let content = $('#myDiv').text();
+        $('#output').text("Text content is: " + content);
+      });
+
+    });
+  </script>
+
+</body>
+</html>
